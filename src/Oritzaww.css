@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#posters div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#posters div:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+
+
+<style>
+  .poster-container {
+    position: relative;
+    display: inline-block; /* Permite que el botón se posicione relativo a la imagen */
+    margin: 10px;
+  }
+
+  .download-button {
+    position: absolute;
+    bottom: 10px; /* Posición desde la parte inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Ocultar por defecto */
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10; /* Asegúrate de que esté por encima de la imagen */
+  }
+
+  .poster-container:hover .download-button {
+    display: block; /* Mostrar al hacer hover */
+  }
+</style>
